@@ -13,6 +13,8 @@ const appApiUrl = '/app/1'
 
 module.exports = defineConfig({
   e2e: {
+    viewportWidth: 1280,
+    viewportHeight: 800,
     setupNodeEvents(on, config) {
       on("before:browser:launch", (browser = {}, launchOptions) => {
         prepareAudit(launchOptions);
@@ -27,10 +29,13 @@ module.exports = defineConfig({
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
     video: process.env.CYPRESS_VIDEO === 'true',
     apiUrl: baseApiUrl,
-    appApiUrl: appApiUrl,
     screenshotOnRunFailure: process.env.CYPRESS_SCREENSHOT !== 'false',
     env: {
-      appUrl: process.env.APP_URL
+      appUrl: process.env.APP_URL,
+      apiUrl: process.env.API_URL,
+      appAPIUrl: process.env.APP_URL,
+      adminUsername: process.env.CYPRESS_adminUsername,
+      adminPassword: process.env.CYPRESS_adminPassword
     }
   },
 

@@ -5,13 +5,13 @@ describe('Fill Company Service Type Test Suite', () => {
                 cy.login(data.companyCreationEmail, data.password)
                 cy.url().should('include', '/onboarding/company')
                 cy.fillCompanyPersonalInfoDetails()
+                cy.fillCompanyServiceTypeDetails({serviceType: 'both', propertyTypes: [0]})
             }
         )
     })
 
     beforeEach(() => {
 
-        // Setup aliases for service type elements
         cy.get('input[type="radio"][value="rent"]').scrollIntoView().as('rentOnlySelector')
         cy.get('input[type="radio"][value="sc"]').scrollIntoView().as('serviceChargeOnlySelector')
         cy.get('input[type="radio"][value="both"]').scrollIntoView().as('serviceChargeRentSelector')

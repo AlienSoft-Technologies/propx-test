@@ -1,23 +1,14 @@
-/**
- * Lighthouse Performance Auditing Tests
- *
- * This test suite uses Lighthouse to audit page performance, accessibility,
- * best practices, and SEO.
- */
+
 
 describe('Lighthouse Performance Tests', () => {
 
     it('Should audit the register page with default thresholds', () => {
         cy.visit('http://localhost:5173/auth/register')
-
-        // Run Lighthouse audit with default thresholds
         cy.lighthouse()
     })
 
     it('Should audit the register page with custom thresholds', () => {
         cy.visit('http://localhost:5173/auth/register')
-
-        // Run Lighthouse audit with custom thresholds
         cy.lighthouse({
             performance: 50,
             accessibility: 90,
