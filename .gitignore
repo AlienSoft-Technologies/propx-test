@@ -38,3 +38,8 @@ yarn-error.log*
 # Package lock files (uncomment the one you want to keep)
 # package-lock.json
 # yarn.lock
+
+
+WORKFLOW.md
+TODO.md
+.env.example
