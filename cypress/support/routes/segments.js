@@ -17,6 +17,7 @@ export const SEGMENTS = {
     },
     CREATE: 'create',    
     PROPERTIES: 'properties',
+    FACILITIES: 'facilities',
 
     LEASEMANAGEMENT: {
         INVOICES: 'invoices',
